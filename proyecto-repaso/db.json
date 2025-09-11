@@ -1,0 +1,12 @@
+{
+  "users": [
+    { "id": 1, "username": "fran", "password": "manza" },
+    { "id": 2, "username": "juani", "password": "teruya" },
+    { "id": 3, "username": "juani", "password": "nastasi" },
+    { "id": 4, "username": "mate", "password": "rosa" },
+    { "id": 5, "username": "agus", "password": "putri" },
+    { "id": 6, "username": "santi", "password": "silva" },
+    { "id": 7, "username": "luqui", "password": "simo" },
+    { "id": 8, "username": "tomi", "password": "prieto" }
+  ]
+}
