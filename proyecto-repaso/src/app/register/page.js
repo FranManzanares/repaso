@@ -2,6 +2,7 @@
 
 import "./register.styles.css";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // <-- Agrega esta línea
 import Input from "../components/Input";
 import Title from "../components/Title";
 import Button from "../components/Button";
@@ -9,6 +10,8 @@ import Button from "../components/Button";
 export default function Register() {
     const [user, setUser] = useState("");
     const [password, setPassword] = useState("");
+    const router = useRouter();
+
 
     function saveUser(event) {
         setUser(event.target.value)
@@ -37,6 +40,8 @@ export default function Register() {
             .then(response => response.json())
             .then(data => {
                 console.log("Usuario creado");
+                router.push("/principal")
+
             })
     }
 
@@ -52,6 +57,6 @@ export default function Register() {
 
             <Button text="Registrarse" onClick={registrarse} />
             <Button text="prueba" onClick={watch} className="secondary" />
-        </div>  
+        </div>
     )
 }
