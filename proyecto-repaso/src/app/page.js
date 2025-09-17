@@ -22,6 +22,9 @@ export default function Home() {
           <a className={styles.secondary} href="/register">
             Registrarse
           </a>
+          <a className={styles.tertiary} href="/main">
+            Más información
+          </a>
         </div>
       </main>
       <footer className={styles.footer}>

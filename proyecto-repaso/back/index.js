@@ -754,3 +754,32 @@ app.post('/register', async function(req,res) {
 })
 
 
+
+// DELETE usuario por id
+app.delete('/usuarios/:id', async function(req, res) {
+    try {
+        const { id } = req.params; // saco el id de la URL
+        const respuesta = await realizarQuery(`
+            DELETE FROM Usuarios WHERE id = ${id}
+        `);
+        res.send({ mensaje: `Usuario con id ${id} eliminado correctamente` });
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ error: "Error al eliminar usuario" });
+    }
+});
+
+
+app.post('/mensajes', async function(req, res) {
+    console.log(req.body); // Esto te mostrará el mensaje que enviaste desde el front
+    try {
+        const respuesta = await realizarQuery(`
+            INSERT INTO Mensajes (texto) 
+            VALUES ('${req.body.texto}')
+        `);
+        res.status(201).send(respuesta); // 201 Created: Respuesta estándar para una creación exitosa
+    } catch (error) {
+        console.log(error);
+        res.status(500).send({ error: "Error al guardar el mensaje" });
+    }
+});
